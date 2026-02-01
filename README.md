@@ -82,6 +82,9 @@ For testing we used the famous library `pytest`.
     У жанра книги не должно быть возрастного рейтинга.
     ```
 
+    - show all books for children. Check a number of books and them names and genres are not in the list `['Ужасы', 'Детективы']`;
+    - show empty list of books for children if books are genres in `['Ужасы', 'Детективы']`.
+
 7. The tests for `add_book_in_favorites`.
 
     *Description.*
