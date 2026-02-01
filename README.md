@@ -42,13 +42,16 @@ For testing we used the famous library `pytest`.
     и её жанр входит в список genre.
     ```
 
+    - a `genre` of an exist book can be set. The genre of the book is equal `genre`;
+    - a `genre` of a non-existent book cannot be set. The exception is not raised;
+
 3. The tests for `get_book_genre`.
 
     *Description.*
     ```
     Выводит жанр книги по её имени.
     ```
-
+    
 4. The tests for `get_books_with_specific_genre`.
 
     *Description.*
