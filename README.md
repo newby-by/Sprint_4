@@ -72,6 +72,8 @@ For testing we used the famous library `pytest`.
     выводит текущий словарь books_genre.
     ```
 
+    - show a list of genres. Compare with `['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии']`;
+  
 6. The tests for `get_books_for_children`.
 
     *Description.*
