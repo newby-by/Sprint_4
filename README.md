@@ -62,6 +62,9 @@ For testing we used the famous library `pytest`.
     Выводит список книг с определённым жанром.
     ```
 
+    - show all books with `genre`. Check a number of books and them names and genres;
+    - show empty list for unused genre in books collection.
+
 5. The tests for `get_books_genre`.
 
     *Description.*
