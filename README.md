@@ -88,11 +88,15 @@ For testing we used the famous library `pytest`.
 7. The tests for `add_book_in_favorites`.
 
     *Description.*
+
     ```
     Добавляет книгу в избранное. 
     Книга должна находиться в словаре books_genre. 
     Повторно добавить книгу в избранное нельзя.
     ```
+
+    - add a name of a book that is in `books_genre`. The `favorites` increases on 1. The name of a book is in `favorites`.
+    - add a name of a book with a unique name in `favorites`. The length of `favorites` is not changed.
 
 8. The tests for `delete_book_from_favorites`.
 
