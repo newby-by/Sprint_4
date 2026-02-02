@@ -112,9 +112,13 @@ For testing we used the famous library `pytest`.
 9. The tests for `get_list_of_favorites_books`.
 
     *Description.*
+
     ```
     Получает список избранных книг.
     ```
+
+    - show a list of `favorites` that is not empty. The list of names contains actual data: the length and names.
+    - show a list of `favorites` that is empty. The list of names contains `[]`.
 
 ## Miscellaneous
 
