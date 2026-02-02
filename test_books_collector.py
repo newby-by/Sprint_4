@@ -1,9 +1,13 @@
+from copy import deepcopy
+
 import pytest
+
 
 from main import BooksCollector
 
 
 class TestBooksCollector:
+    LENGTH_NAME_MORE_40_LETTERS = 41
 
     @pytest.mark.skip
     def test_add_new_book_add_two_books(self):
@@ -19,6 +23,16 @@ class TestBooksCollector:
         name = 'Гордость и предубеждение и зомби'
         collector.add_new_book(name)
         expected_books_genre = collector.get_books_genre()
+        
+        collector.add_new_book(name)
+
+        assert collector.get_books_genre() == expected_books_genre
+
+    def test_add_new_book_with_name_more_40_letters(self):
+        """Add name of a book with more 40 letters."""
+        collector = BooksCollector()
+        expected_books_genre = deepcopy(collector.get_books_genre())
+        name = 'A' * self.LENGTH_NAME_MORE_40_LETTERS
         
         collector.add_new_book(name)
 
