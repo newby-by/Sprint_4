@@ -101,10 +101,14 @@ For testing we used the famous library `pytest`.
 8. The tests for `delete_book_from_favorites`.
 
     *Description.*
+
     ```
     Удаляет книгу из избранного, если она там есть.
     ```
 
+    - remove a name of a book that is in `favorites`. The `favorites` decincreases on 1. The name of a book is not in `favorites`.
+    - remove a name of a book that is not in `favorites`. The length of `favorites` is not changed.
+  
 9. The tests for `get_list_of_favorites_books`.
 
     *Description.*
