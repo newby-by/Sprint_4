@@ -25,14 +25,21 @@ For testing we used the famous library `pytest`.
 
     - add 2 books with a unique name. The numbers `books_genre` increases on 2.
 
-    **DONE**: test_add_new_book_add_two_books;
+        **SKIP**: `test_add_new_book_add_two_books`
 
-    - add a book with with a unique name. The value of `books_genre` is empty;
-    - add a book with a existed `name`. The length of `books_genre` and the pair `(name, genre)` are not changed;
+    - add a book with a unique name. The value of `books_genre` is not changed;
+
+        **DONE**: `test_add_new_book_with_unique_name`
+
     - add a book with a name with 40 letters. The `books_genre` has the pair `(name, "")`;
-    - add a book with a name with more 40 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
-    - add a book with a name with 0 letters.
-    The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
+
+        **TODO**
+
+    - add a name of a book with with more 40 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
+
+        **PROGRESS**: `test_add_new_book_with_name_more_40_letters`
+
+    - add a book with a name with 0 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
 2. The tests for `set_book_genre`.
 
