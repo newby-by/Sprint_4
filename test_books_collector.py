@@ -77,3 +77,18 @@ class TestBooksCollector:
         actual_movie_names = collector.get_books_with_specific_genre(genre)
 
         assert actual_movie_names == expected_movies_names
+
+    def test_get_books_genre_unempty_list_books(self):
+        """Show unempty dict of books_genres."""
+        collector = BooksCollector()
+        expected_books_genre = {
+            'Гордость и предубеждение и зомби': '',
+            'Что делать, если ваш кот хочет вас убить': '',
+        }
+        collector.add_new_book(list(expected_books_genre)[0])
+        collector.add_new_book(list(expected_books_genre)[1])
+
+        actual_books_genre = collector.get_books_genre()
+
+        assert (isinstance(actual_books_genre, dict) and 
+                actual_books_genre == expected_books_genre)
