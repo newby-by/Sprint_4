@@ -37,7 +37,7 @@ For testing we used the famous library `pytest`.
 
     - add a name of a book with with more 40 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
-        **PROGRESS**: `test_add_new_book_with_name_more_40_letters`
+        **DONE**: `test_add_new_book_with_name_more_40_letters`
 
     - add a book with a name with 0 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
