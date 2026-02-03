@@ -47,3 +47,15 @@ class TestBooksCollector:
         collector.set_book_genre(name, excepted_genre)
 
         assert collector.get_books_genre().get(name) == excepted_genre
+
+    def test_get_book_genre_for_exist_book(self):
+        """A genre of an exist book can be displayed."""
+        collector = BooksCollector()
+        name = 'Гордость и предубеждение и зомби'
+        collector.add_new_book(name)
+        expected_genre = 'Ужасы'
+        collector.set_book_genre(name, expected_genre)
+
+        actual_genre = collector.get_book_genre(name)
+
+        assert actual_genre == expected_genre
