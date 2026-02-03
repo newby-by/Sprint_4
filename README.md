@@ -37,7 +37,7 @@ For testing we used the famous library `pytest`.
 
     - add a name of a book with with more 40 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
-        **PROGRESS**: `test_add_new_book_with_name_more_40_letters`
+        **DONE**: `test_add_new_book_with_name_more_40_letters`
 
     - add a book with a name with 0 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
@@ -50,7 +50,10 @@ For testing we used the famous library `pytest`.
     ```
 
     - a `genre` of an exist book can be set. The genre of the book is equal `genre`;
-    - a `genre` of a non-existent book cannot be set. The exception is not raised;
+
+        **DONE**: `test_set_book_genre_for_exits_book`
+
+    - a `genre` of a non-existent book cannot be set. `books_genre` is not changed;
 
 3. The tests for `get_book_genre`.
 
