@@ -85,10 +85,11 @@ For testing we used the famous library `pytest`.
 
     *Description.*
     ```
-    выводит текущий словарь books_genre.
+    Выводит текущий словарь books_genre.
     ```
+    - show a list of `books_genres`. Check type of a result object is dict. Contains correct data.
 
-    - show a list of genres. Compare with `['Фантастика', 'Ужасы', 'Детективы', 'Мультфильмы', 'Комедии']`;
+        **DONE**: `test_get_books_genre_unempty_list_books`
   
 6. The tests for `get_books_for_children`.
 
