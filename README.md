@@ -50,7 +50,10 @@ For testing we used the famous library `pytest`.
     ```
 
     - a `genre` of an exist book can be set. The genre of the book is equal `genre`;
-    - a `genre` of a non-existent book cannot be set. The exception is not raised;
+
+        **DONE**: `test_set_book_genre_for_exits_book`
+
+    - a `genre` of a non-existent book cannot be set. `books_genre` is not changed;
 
 3. The tests for `get_book_genre`.
 
