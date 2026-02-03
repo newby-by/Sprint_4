@@ -2,7 +2,6 @@ from copy import deepcopy
 
 import pytest
 
-
 from main import BooksCollector
 
 
@@ -22,7 +21,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         name = 'Гордость и предубеждение и зомби'
         collector.add_new_book(name)
-        expected_books_genre = collector.get_books_genre()
+        expected_books_genre = deepcopy(collector.get_books_genre())
         
         collector.add_new_book(name)
 
