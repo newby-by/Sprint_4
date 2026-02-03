@@ -63,6 +63,9 @@ For testing we used the famous library `pytest`.
     ```
 
     - a `genre` of an exist book can be showed. The `genre` of the book is displayed;
+
+        **DONE**: `test_get_book_genre_for_exist_book`
+
     - set a non-existent name of a book. The exception is not raised;
     
 4. The tests for `get_books_with_specific_genre`.
