@@ -67,7 +67,7 @@ For testing we used the famous library `pytest`.
         **DONE**: `test_get_book_genre_for_exist_book`
 
     - set a non-existent name of a book. The exception is not raised;
-    
+
 4. The tests for `get_books_with_specific_genre`.
 
     *Description.*
@@ -75,7 +75,10 @@ For testing we used the famous library `pytest`.
     Выводит список книг с определённым жанром.
     ```
 
-    - show all books with `genre`. Check a number of books and them names and genres;
+    - show all books with `genre`. Check a list of books;
+
+        **DONE**: `test_get_books_with_specific_genre_exist_books_with_genre`
+
     - show empty list for unused genre in books collection.
 
 5. The tests for `get_books_genre`.

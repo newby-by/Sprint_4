@@ -59,3 +59,21 @@ class TestBooksCollector:
         actual_genre = collector.get_book_genre(name)
 
         assert actual_genre == expected_genre
+
+    def test_get_books_with_specific_genre_exist_books_with_genre(self):
+        """Show all exist books with genre."""
+        collector = BooksCollector()
+        genre = 'Ужасы'
+        expected_movies_names = [
+            'Гордость и предубеждение и зомби',
+            'Что делать, если ваш кот хочет вас убить'
+        ]
+       
+        collector.add_new_book(expected_movies_names[0])
+        collector.set_book_genre(expected_movies_names[0], genre)
+        collector.add_new_book(expected_movies_names[1])
+        collector.set_book_genre(expected_movies_names[1], genre)
+
+        actual_movie_names = collector.get_books_with_specific_genre(genre)
+
+        assert actual_movie_names == expected_movies_names
