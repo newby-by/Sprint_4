@@ -100,7 +100,10 @@ For testing we used the famous library `pytest`.
     ```
 
     - show all books for children. Check a number of books and them names and genres are not in the list `['Ужасы', 'Детективы']`;
-    - show empty list of books for children if books are genres in `['Ужасы', 'Детективы']`.
+  
+        **DONE**: `test_get_books_for_children_unempty_list_books`
+
+    - show empty list of books for children if books are genres in `['Ужасы', 'Детективы']` only.
 
 7. The tests for `add_book_in_favorites`.
 
