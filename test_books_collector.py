@@ -92,3 +92,29 @@ class TestBooksCollector:
 
         assert (isinstance(actual_books_genre, dict) and 
                 actual_books_genre == expected_books_genre)
+
+    def test_get_books_for_children_unempty_list_books(self):
+        """Show all books for children."""
+        collector = BooksCollector()
+        expected_movies_names_for_adult = [
+            'Гордость и предубеждение и зомби',
+            'Что делать, если ваш кот хочет вас убить'
+        ]
+        collector.add_new_book(expected_movies_names_for_adult[0])
+        collector.set_book_genre(expected_movies_names_for_adult[0], 'Ужасы')
+        collector.add_new_book(expected_movies_names_for_adult[1])
+        collector.set_book_genre(expected_movies_names_for_adult[1], 'Детективы')
+
+        expected_movies_names_for_child = [
+            'ОНО',
+            'Пила 6',
+            'Сайлент хилл',
+        ]
+        collector.add_new_book(expected_movies_names_for_child[0])
+        collector.set_book_genre(expected_movies_names_for_child[0], 'Фантастика')
+        collector.add_new_book(expected_movies_names_for_child[1])
+        collector.set_book_genre(expected_movies_names_for_child[1], 'Мультфильмы')
+        collector.add_new_book(expected_movies_names_for_child[2])
+        collector.set_book_genre(expected_movies_names_for_child[2], 'Комедии')
+
+        assert collector.get_books_for_children() == expected_movies_names_for_child
