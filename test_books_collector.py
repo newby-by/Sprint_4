@@ -22,7 +22,7 @@ class TestBooksCollector:
         name = 'Гордость и предубеждение и зомби'
         collector.add_new_book(name)
         expected_books_genre = deepcopy(collector.get_books_genre())
-        
+
         collector.add_new_book(name)
 
         assert collector.get_books_genre() == expected_books_genre
@@ -32,7 +32,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         expected_books_genre = deepcopy(collector.get_books_genre())
         name = 'A' * self.LENGTH_NAME_MORE_40_LETTERS
-        
+
         collector.add_new_book(name)
 
         assert collector.get_books_genre() == expected_books_genre
@@ -68,7 +68,7 @@ class TestBooksCollector:
             'Гордость и предубеждение и зомби',
             'Что делать, если ваш кот хочет вас убить'
         ]
-       
+
         collector.add_new_book(expected_movies_names[0])
         collector.set_book_genre(expected_movies_names[0], genre)
         collector.add_new_book(expected_movies_names[1])
@@ -90,7 +90,7 @@ class TestBooksCollector:
 
         actual_books_genre = collector.get_books_genre()
 
-        assert (isinstance(actual_books_genre, dict) and 
+        assert (isinstance(actual_books_genre, dict) and
                 actual_books_genre == expected_books_genre)
 
     def test_get_books_for_children_unempty_list_books(self):
@@ -103,7 +103,8 @@ class TestBooksCollector:
         collector.add_new_book(expected_movies_names_for_adult[0])
         collector.set_book_genre(expected_movies_names_for_adult[0], 'Ужасы')
         collector.add_new_book(expected_movies_names_for_adult[1])
-        collector.set_book_genre(expected_movies_names_for_adult[1], 'Детективы')
+        collector.set_book_genre(expected_movies_names_for_adult[1],
+                                 'Детективы')
 
         expected_movies_names_for_child = [
             'ОНО',
@@ -111,29 +112,33 @@ class TestBooksCollector:
             'Сайлент хилл',
         ]
         collector.add_new_book(expected_movies_names_for_child[0])
-        collector.set_book_genre(expected_movies_names_for_child[0], 'Фантастика')
+        collector.set_book_genre(expected_movies_names_for_child[0],
+                                 'Фантастика')
         collector.add_new_book(expected_movies_names_for_child[1])
-        collector.set_book_genre(expected_movies_names_for_child[1], 'Мультфильмы')
+        collector.set_book_genre(expected_movies_names_for_child[1],
+                                 'Мультфильмы')
         collector.add_new_book(expected_movies_names_for_child[2])
-        collector.set_book_genre(expected_movies_names_for_child[2], 'Комедии')
+        collector.set_book_genre(expected_movies_names_for_child[2],
+                                 'Комедии')
 
-        assert collector.get_books_for_children() == expected_movies_names_for_child
+        assert (collector.get_books_for_children() ==
+                expected_movies_names_for_child)
 
-    def test_add_book_in_favorites_with_unique_name_and_favorites_is_empty(self):
+    def test_add_book_in_favorites_with_unique_name_favorites_is_empty(self):
         """Add a unique name of a book that is in books_genre."""
         collector = BooksCollector()
         expected_favorites_length = len(collector.favorites)
         expected_favorite_movie_name = 'ОНО'
-        collector.add_new_book('Гордость и предубеждение и зомби',)
+        collector.add_new_book('Гордость и предубеждение и зомби')
         collector.set_book_genre('Гордость и предубеждение и зомби', 'Ужасы')
         collector.add_new_book(expected_favorite_movie_name)
         collector.set_book_genre(expected_favorite_movie_name, 'Комедии')
 
         collector.add_book_in_favorites(expected_favorite_movie_name)
 
-        assert (len(collector.get_list_of_favorites_books()) == 
+        assert (len(collector.get_list_of_favorites_books()) ==
                 expected_favorites_length + 1 and
-                expected_favorite_movie_name in 
+                expected_favorite_movie_name in
                 collector.get_list_of_favorites_books())
 
     def test_delete_book_from_favorites_with_exist_name(self):
@@ -149,9 +154,9 @@ class TestBooksCollector:
 
         collector.delete_book_from_favorites(expected_favorite_movie_name)
 
-        assert (len(collector.get_list_of_favorites_books()) == 
+        assert (len(collector.get_list_of_favorites_books()) ==
                 expected_favorites_length - 1 and
-                expected_favorite_movie_name not in 
+                expected_favorite_movie_name not in
                 collector.get_list_of_favorites_books())
 
     def test_get_list_of_favorites_books_with_unempty_favorites(self):
@@ -165,5 +170,5 @@ class TestBooksCollector:
         collector.add_book_in_favorites(expected_favorite_movie_name)
 
         actual_favorites = collector.get_list_of_favorites_books()
-        assert (len(collector.favorites) == 1 and 
+        assert (len(collector.favorites) == 1 and
                 actual_favorites == [expected_favorite_movie_name])
