@@ -153,3 +153,17 @@ class TestBooksCollector:
                 expected_favorites_length - 1 and
                 expected_favorite_movie_name not in 
                 collector.get_list_of_favorites_books())
+
+    def test_get_list_of_favorites_books_with_unempty_favorites(self):
+        """Show a unempty list of favorites that is not empty."""
+        collector = BooksCollector()
+        expected_favorite_movie_name = 'ОНО'
+        collector.add_new_book('Гордость и предубеждение и зомби',)
+        collector.set_book_genre('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book(expected_favorite_movie_name)
+        collector.set_book_genre(expected_favorite_movie_name, 'Комедии')
+        collector.add_book_in_favorites(expected_favorite_movie_name)
+
+        actual_favorites = collector.get_list_of_favorites_books()
+        assert (len(collector.favorites) == 1 and 
+                actual_favorites == [expected_favorite_movie_name])
