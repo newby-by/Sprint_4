@@ -118,3 +118,20 @@ class TestBooksCollector:
         collector.set_book_genre(expected_movies_names_for_child[2], 'Комедии')
 
         assert collector.get_books_for_children() == expected_movies_names_for_child
+
+    def test_add_book_in_favorites_with_unique_name_and_favorites_is_empty(self):
+        """Add a unique name of a book that is in books_genre."""
+        collector = BooksCollector()
+        expected_favorites_length = len(collector.favorites)
+        expected_favorite_movie_name = 'ОНО'
+        collector.add_new_book('Гордость и предубеждение и зомби',)
+        collector.set_book_genre('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book(expected_favorite_movie_name)
+        collector.set_book_genre(expected_favorite_movie_name, 'Комедии')
+
+        collector.add_book_in_favorites(expected_favorite_movie_name)
+
+        assert (len(collector.get_list_of_favorites_books()) == 
+                expected_favorites_length + 1 and
+                expected_favorite_movie_name in 
+                collector.get_list_of_favorites_books())

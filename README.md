@@ -115,7 +115,11 @@ For testing we used the famous library `pytest`.
     Повторно добавить книгу в избранное нельзя.
     ```
 
-    - add a name of a book that is in `books_genre`. The `favorites` increases on 1. The name of a book is in `favorites`.
+    - add a unique name of a book that is in `books_genre` and `favorites` is empty. The length of `favorites` increases on 1. The name of a book is in `favorites`.
+
+        **DONE**: `test_add_book_in_favorites_with_unique_name_and_favorites_is_empty`
+
+    - add a unique name of a book that is in `books_genre` and `favorites` is not empty. The length of `favorites` increases on 1. The name of a book is in `favorites`.
     - add a name of a book with a unique name in `favorites`. The length of `favorites` is not changed.
 
 8. The tests for `delete_book_from_favorites`.
