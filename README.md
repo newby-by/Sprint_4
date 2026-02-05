@@ -145,6 +145,9 @@ For testing we used the famous library `pytest`.
     ```
 
     - show a list of `favorites` that is not empty. The list of names contains actual data: the length and names.
+
+    **DONE**: `test_get_list_of_favorites_books_with_unempty_favorites`
+
     - show a list of `favorites` that is empty. The list of names contains `[]`.
 
 ## Miscellaneous
