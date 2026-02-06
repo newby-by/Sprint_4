@@ -70,20 +70,20 @@ class TestBooksCollector:
     def test_get_books_with_specific_genre_exist_books_with_genre(self):
         """Show all exist books with genre."""
         collector = BooksCollector()
-        genre = 'Ужасы'
-        expected_movies_names = [
-            'Гордость и предубеждение и зомби',
-            'Что делать, если ваш кот хочет вас убить'
-        ]
+        genre_horror = 'Ужасы'
+        genre_comedy = 'Комедии'
+        expected_movies_name = 'Гордость и предубеждение и зомби'
 
-        collector.add_new_book(expected_movies_names[0])
-        collector.set_book_genre(expected_movies_names[0], genre)
-        collector.add_new_book(expected_movies_names[1])
-        collector.set_book_genre(expected_movies_names[1], genre)
+        collector.add_new_book('Что делать, если ваш кот хочет вас убить')
+        collector.set_book_genre('Что делать, если ваш кот хочет вас убить',
+                                 genre_horror)
+        collector.add_new_book(expected_movies_name)
+        collector.set_book_genre(expected_movies_name, genre_comedy)
 
-        actual_movie_names = collector.get_books_with_specific_genre(genre)
+        actual_movie_name = (collector.
+                             get_books_with_specific_genre(genre_comedy)[0])
 
-        assert actual_movie_names == expected_movies_names
+        assert actual_movie_name == expected_movies_name
 
     def test_get_books_genre_unempty_list_books(self):
         """Show unempty dict of books_genres."""
