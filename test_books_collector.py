@@ -28,7 +28,7 @@ class TestBooksCollector:
         assert collector.get_books_genre() == expected_books_genre
 
     @pytest.mark.parametrize(
-            'name_length_more_40', 
+            'name_length_more_40',
             [
                 LENGTH_NAME_MORE_40_LETTERS_41,
                 LENGTH_NAME_MORE_40_LETTERS_45,
