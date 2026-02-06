@@ -6,13 +6,45 @@
 
 Tomcat which gets up me early every morning.
 
-## How to test
+## How to start
 
 For testing we used the famous library `pytest`.
 
 **Note**. See `requirements.txt` for detail.
 
-### The check list
+1. Create a virtual envirement
+
+    ```terminal
+    python -m venv venv
+    ```
+
+    *Note* Check the version of python `python --version`.
+
+2. Activate `venv`
+
+    ```terminal
+    source venv/Scripts/activate 
+    ```
+
+3. Install `pytest` by `requirements.txt`
+
+    ```terminal
+    pip install -r requirements.txt
+    ```
+
+    or with the newest version
+
+    ```terminal
+    pip install pytest
+    ```
+
+4. Start all tests
+
+    ```terminal
+    pytest
+    ```
+
+### The checklist
 
 1. The tests for `add_new_book`.
 
@@ -38,6 +70,8 @@ For testing we used the famous library `pytest`.
     - add a name of a book with with more 40 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 
         **DONE**: `test_add_new_book_with_name_more_40_letters`
+
+        **FIX**: 
 
     - add a book with a name with 0 letters. The length of `books_genre` is not changed and and the pair `(name, "")` is not exists;
 

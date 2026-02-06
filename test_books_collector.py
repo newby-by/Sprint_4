@@ -2,11 +2,12 @@ from copy import deepcopy
 
 import pytest
 
+from data_provider import (LENGTH_NAME_MORE_40_LETTERS_41,
+                           LENGTH_NAME_MORE_40_LETTERS_45)
 from main import BooksCollector
 
 
 class TestBooksCollector:
-    LENGTH_NAME_MORE_40_LETTERS = 41
 
     @pytest.mark.skip
     def test_add_new_book_add_two_books(self):
@@ -27,11 +28,18 @@ class TestBooksCollector:
 
         assert collector.get_books_genre() == expected_books_genre
 
-    def test_add_new_book_with_name_more_40_letters(self):
+    @pytest.mark.parametrize(
+            'name_length_more_40', 
+            [
+                LENGTH_NAME_MORE_40_LETTERS_41,
+                LENGTH_NAME_MORE_40_LETTERS_45,
+            ]
+    )
+    def test_add_new_book_with_name_more_40_letters(self, name_length_more_40):
         """Add name of a book with more 40 letters."""
         collector = BooksCollector()
         expected_books_genre = deepcopy(collector.get_books_genre())
-        name = 'A' * self.LENGTH_NAME_MORE_40_LETTERS
+        name = 'A' * name_length_more_40
 
         collector.add_new_book(name)
 
