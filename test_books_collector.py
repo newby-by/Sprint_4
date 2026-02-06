@@ -72,18 +72,18 @@ class TestBooksCollector:
         collector = BooksCollector()
         genre_horror = 'Ужасы'
         genre_comedy = 'Комедии'
-        expected_movies_name = 'Гордость и предубеждение и зомби'
+        expected_books_name = 'Гордость и предубеждение и зомби'
 
         collector.add_new_book('Что делать, если ваш кот хочет вас убить')
         collector.set_book_genre('Что делать, если ваш кот хочет вас убить',
                                  genre_horror)
-        collector.add_new_book(expected_movies_name)
-        collector.set_book_genre(expected_movies_name, genre_comedy)
+        collector.add_new_book(expected_books_name)
+        collector.set_book_genre(expected_books_name, genre_comedy)
 
-        actual_movie_name = (collector.
+        actual_books_name = (collector.
                              get_books_with_specific_genre(genre_comedy)[0])
 
-        assert actual_movie_name == expected_movies_name
+        assert actual_books_name == expected_books_name
 
     def test_get_books_genre_unempty_list_books(self):
         """Show unempty dict of books_genres."""
@@ -103,33 +103,33 @@ class TestBooksCollector:
     def test_get_books_for_children_unempty_list_books(self):
         """Show all books for children."""
         collector = BooksCollector()
-        expected_movies_names_for_adult = [
+        expected_books_names_for_adult = [
             'Гордость и предубеждение и зомби',
             'Что делать, если ваш кот хочет вас убить'
         ]
-        collector.add_new_book(expected_movies_names_for_adult[0])
-        collector.set_book_genre(expected_movies_names_for_adult[0], 'Ужасы')
-        collector.add_new_book(expected_movies_names_for_adult[1])
-        collector.set_book_genre(expected_movies_names_for_adult[1],
+        collector.add_new_book(expected_books_names_for_adult[0])
+        collector.set_book_genre(expected_books_names_for_adult[0], 'Ужасы')
+        collector.add_new_book(expected_books_names_for_adult[1])
+        collector.set_book_genre(expected_books_names_for_adult[1],
                                  'Детективы')
 
-        expected_movies_names_for_child = [
+        expected_books_names_for_child = [
             'ОНО',
             'Пила 6',
             'Сайлент хилл',
         ]
-        collector.add_new_book(expected_movies_names_for_child[0])
-        collector.set_book_genre(expected_movies_names_for_child[0],
+        collector.add_new_book(expected_books_names_for_child[0])
+        collector.set_book_genre(expected_books_names_for_child[0],
                                  'Фантастика')
-        collector.add_new_book(expected_movies_names_for_child[1])
-        collector.set_book_genre(expected_movies_names_for_child[1],
+        collector.add_new_book(expected_books_names_for_child[1])
+        collector.set_book_genre(expected_books_names_for_child[1],
                                  'Мультфильмы')
-        collector.add_new_book(expected_movies_names_for_child[2])
-        collector.set_book_genre(expected_movies_names_for_child[2],
+        collector.add_new_book(expected_books_names_for_child[2])
+        collector.set_book_genre(expected_books_names_for_child[2],
                                  'Комедии')
 
         assert (collector.get_books_for_children() ==
-                expected_movies_names_for_child)
+                expected_books_names_for_child)
 
     def test_add_book_in_favorites_with_unique_name_favorites_is_empty(self):
         """Add a unique name of a book that is in books_genre."""
