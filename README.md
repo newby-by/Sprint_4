@@ -57,7 +57,7 @@ For testing we used the famous library `pytest`.
 
     - add 2 books with a unique name. The numbers `books_genre` increases on 2.
 
-        **SKIP**: `test_add_new_book_add_two_books`
+        **FIX**: `test_add_new_book_add_two_books`
 
     - add a book with a unique name. The value of `books_genre` is not changed;
 
