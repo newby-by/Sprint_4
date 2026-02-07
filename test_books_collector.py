@@ -17,11 +17,10 @@ class TestBooksCollector:
 
         assert len(collector.get_books_genre()) == 2
 
-    def test_add_new_book_with_unique_name(self, 
-                                           collector, 
+    def test_add_new_book_with_unique_name(self,
+                                           collector,
                                            some_name_book):
         """Add a book with a unique name."""
-
         expected_books_genre = {some_name_book: ''}
         collector.add_new_book(some_name_book)
 
@@ -70,7 +69,7 @@ class TestBooksCollector:
         )
 
         assert actual_genre == genre
-    
+
     def test_get_books_with_specific_genre_exist_books_with_genre(
             self,
             collector_with_book_and_genre
@@ -87,7 +86,7 @@ class TestBooksCollector:
                              get_books_with_specific_genre(genre_comedy)[0])
 
         assert actual_books_name == expected_books_name
-    
+
     def test_get_books_genre_unempty_list_books(
             self,
             collector_with_book_and_genre,
@@ -95,7 +94,6 @@ class TestBooksCollector:
             genre,
     ):
         """Show unempty dict of books_genres."""
-
         actual_books_genre = collector_with_book_and_genre.get_books_genre()
 
         assert (isinstance(actual_books_genre, dict) and
@@ -107,7 +105,6 @@ class TestBooksCollector:
             list_child_book_names
     ):
         """Show all books for children."""
-        
         actual_child_books = (collector_with_full_type_genre_books.
                               get_books_for_children())
         assert (len(actual_child_books) == len(list_child_book_names) and
@@ -120,12 +117,11 @@ class TestBooksCollector:
             collector_with_full_type_genre_books
     ):
         """Add a unique name of a book that is in books_genre."""
-       
         length_favorites = len(collector_with_full_type_genre_books.
                                get_list_of_favorites_books())
-        
+
         expected_favorite_book = list(collector_with_full_type_genre_books.
-                                  get_books_genre())[0]
+                                      get_books_genre())[0]
         collector_with_full_type_genre_books.add_book_in_favorites(
             expected_favorite_book
         )
@@ -134,7 +130,7 @@ class TestBooksCollector:
                                       get_list_of_favorites_books())
         actual_favorites = (collector_with_full_type_genre_books.
                             get_list_of_favorites_books())
-        
+
         assert (actual_length_favorites == length_favorites + 1 and
                 expected_favorite_book in actual_favorites)
 
