@@ -20,11 +20,6 @@ def collector():
 
 
 @pytest.fixture
-def another_name_book():
-    yield book_name_adult_two
-
-
-@pytest.fixture
 def collector_with_book(collector):
     collector.add_new_book(book_name_adult_one)
     yield collector
@@ -45,11 +40,10 @@ def genre(collector_with_book_and_genre):
 
 
 @pytest.fixture
-def collector_with_two_adult_books(collector_with_book_and_genre,
-                                   another_name_book):
-    collector_with_book_and_genre.add_new_book(another_name_book)
+def collector_with_two_adult_books(collector_with_book_and_genre):
+    collector_with_book_and_genre.add_new_book(book_name_adult_two)
     collector_with_book_and_genre.set_book_genre(
-        another_name_book, genres_adult[1]
+        book_name_adult_two, genres_adult[1]
     )
 
     yield collector_with_book_and_genre

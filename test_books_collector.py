@@ -16,11 +16,9 @@ from data import (
 
 class TestBooksCollector:
 
-    def test_add_new_book_add_two_books(self,
-                                        collector,
-                                        another_name_book):
+    def test_add_new_book_add_two_books(self, collector):
         collector.add_new_book(book_name_adult_one)
-        collector.add_new_book(another_name_book)
+        collector.add_new_book(book_name_adult_two)
 
         assert len(collector.get_books_genre()) == 2
 
