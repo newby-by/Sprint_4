@@ -4,7 +4,15 @@ import pytest
 
 from data import (LENGTH_NAME_MORE_40_LETTERS_41,
                   LENGTH_NAME_MORE_40_LETTERS_45)
-
+from data import (
+    book_name_adult_one,
+    book_name_adult_two,
+    book_name_child_one,
+    book_name_child_two,
+    book_name_child_three,
+    genres_adult,
+    genres_child
+)
 
 class TestBooksCollector:
 
@@ -45,10 +53,9 @@ class TestBooksCollector:
         assert collector.get_books_genre() == expected_books_genre
 
     def test_set_book_genre_for_exist_book(self,
-                                           collector_with_book,
-                                           adult_genres):
+                                           collector_with_book):
         """A genre of an exist book can be set."""
-        expected_genre_book = adult_genres[0]
+        expected_genre_book = genres_adult[0]
         expected_name_book = list(collector_with_book.get_books_genre())[0]
 
         collector_with_book.set_book_genre(expected_name_book,
