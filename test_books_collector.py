@@ -18,19 +18,16 @@ class TestBooksCollector:
 
     def test_add_new_book_add_two_books(self,
                                         collector,
-                                        some_name_book,
                                         another_name_book):
-        collector.add_new_book(some_name_book)
+        collector.add_new_book(book_name_adult_one)
         collector.add_new_book(another_name_book)
 
         assert len(collector.get_books_genre()) == 2
 
-    def test_add_new_book_with_unique_name(self,
-                                           collector,
-                                           some_name_book):
+    def test_add_new_book_with_unique_name(self, collector):
         """Add a book with a unique name."""
-        expected_books_genre = {some_name_book: ''}
-        collector.add_new_book(some_name_book)
+        expected_books_genre = {book_name_adult_one: ''}
+        collector.add_new_book(book_name_adult_one)
 
         assert collector.get_books_genre() == expected_books_genre
 
@@ -68,11 +65,10 @@ class TestBooksCollector:
 
     def test_get_book_genre_for_exist_book(self,
                                            collector_with_book_and_genre,
-                                           some_name_book,
                                            genre):
         """A genre of an exist book can be displayed."""
         actual_genre = collector_with_book_and_genre.get_book_genre(
-            some_name_book
+            book_name_adult_one
         )
 
         assert actual_genre == genre
@@ -97,14 +93,13 @@ class TestBooksCollector:
     def test_get_books_genre_unempty_list_books(
             self,
             collector_with_book_and_genre,
-            some_name_book,
             genre,
     ):
         """Show unempty dict of books_genres."""
         actual_books_genre = collector_with_book_and_genre.get_books_genre()
 
         assert (isinstance(actual_books_genre, dict) and
-                actual_books_genre == {some_name_book: genre})
+                actual_books_genre == {book_name_adult_one: genre})
 
     def test_get_books_for_children_unempty_list_books(
             self,
