@@ -13,11 +13,6 @@ from main import BooksCollector
 
 
 @pytest.fixture
-def child_genres():
-    yield genres_child
-
-
-@pytest.fixture
 def collector():
     collector = BooksCollector()
     yield collector
@@ -76,26 +71,25 @@ def list_adult_book_names(collector_with_two_adult_books):
 
 
 @pytest.fixture
-def collector_with_full_type_genre_books(collector_with_two_adult_books,
-                                         child_genres):
+def collector_with_full_type_genre_books(collector_with_two_adult_books):
     collector_with_two_adult_books.add_new_book(book_name_child_one)
     collector_with_two_adult_books.set_book_genre(book_name_child_one,
-                                                  child_genres[0])
+                                                  genres_child[0])
     collector_with_two_adult_books.add_new_book(book_name_child_two)
     collector_with_two_adult_books.set_book_genre(book_name_child_two,
-                                                  child_genres[1])
+                                                  genres_child[1])
     collector_with_two_adult_books.add_new_book(book_name_child_three)
     collector_with_two_adult_books.set_book_genre(book_name_child_three,
-                                                  child_genres[2])
+                                                  genres_child[2])
 
     yield collector_with_two_adult_books
 
 
 @pytest.fixture
-def list_child_book_names(collector_with_full_type_genre_books, child_genres):
+def list_child_book_names(collector_with_full_type_genre_books):
     books = collector_with_full_type_genre_books.get_books_genre()
     list_child_books_name = [book for book, genre in books.items()
-                             if genre in child_genres]
+                             if genre in genres_child]
 
     yield list_child_books_name
 
