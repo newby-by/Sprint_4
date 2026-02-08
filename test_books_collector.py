@@ -2,8 +2,8 @@ from copy import deepcopy
 
 import pytest
 
-from data_provider import (LENGTH_NAME_MORE_40_LETTERS_41,
-                           LENGTH_NAME_MORE_40_LETTERS_45)
+from data import (LENGTH_NAME_MORE_40_LETTERS_41,
+                  LENGTH_NAME_MORE_40_LETTERS_45)
 
 
 class TestBooksCollector:

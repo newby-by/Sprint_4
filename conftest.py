@@ -1,6 +1,6 @@
 import pytest
 
-from data_provider import (
+from data import (
     book_name_adult_one,
     book_name_adult_two,
     book_name_child_one,
