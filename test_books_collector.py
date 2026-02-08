@@ -2,17 +2,14 @@ from copy import deepcopy
 
 import pytest
 
-from data import (LENGTH_NAME_MORE_40_LETTERS_41,
-                  LENGTH_NAME_MORE_40_LETTERS_45)
 from data import (
     book_name_adult_one,
     book_name_adult_two,
-    book_name_child_one,
-    book_name_child_two,
-    book_name_child_three,
     genres_adult,
-    genres_child
+    LENGTH_NAME_MORE_40_LETTERS_41,
+    LENGTH_NAME_MORE_40_LETTERS_45
 )
+
 
 class TestBooksCollector:
 
